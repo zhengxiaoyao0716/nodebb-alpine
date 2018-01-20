@@ -36,6 +36,7 @@ ENV NODE_ENV=production \
     silent=false
 
 COPY docker-entrypoint.sh /entrypoint.sh
+run chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 4567
