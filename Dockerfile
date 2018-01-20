@@ -25,11 +25,15 @@ RUN set -ex \
                       python \
                       tar \
     && curl -sSL $BB_URL | tar xz --strip 1 \
-    && npm install --production \
-    && npm cache clean \
+    && cp ./install/package.json ./package.json \
+    && npm install && npm cache clean --force \
     && apk del TMP \
     && rm -rf /tmp/npm* \
               /var/cache/apk/*
+
+ENV NODE_ENV=production \
+    daemon=false \
+    silent=false
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

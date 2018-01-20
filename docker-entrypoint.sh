@@ -1,10 +1,6 @@
 #!/bin/bash
 set -e
 
-export NODE_ENV=production
-export silent=false
-export daemon=false
-
 if [[ "$*" == npm*start* ]]; then
     if [ ! -e "$BB_CONTENT/config.json" ]; then
         if [ -e "$BB_SOURCE/config.json" ]; then
