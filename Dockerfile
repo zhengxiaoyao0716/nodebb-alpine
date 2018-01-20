@@ -35,9 +35,5 @@ ENV NODE_ENV=production \
     daemon=false \
     silent=false
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-
 EXPOSE 4567
 CMD ./nodebb start
