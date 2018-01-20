@@ -10,7 +10,7 @@ Read the [docs][2].
 
 ```yaml
 nodebb:
-  image: zhengxiaoyao0716/nodebb
+  image: zhengxiaoyao0716/nodebb-alpine
   ports:
     - "4567:4567"
   links:
