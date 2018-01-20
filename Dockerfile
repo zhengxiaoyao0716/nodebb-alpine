@@ -35,9 +35,9 @@ ENV NODE_ENV=production \
     daemon=false \
     silent=false
 
-COPY docker-entrypoint.sh /entrypoint.sh
-run chmod +x /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 4567
-CMD ["npm", "start"]
+CMD ./nodebb start
